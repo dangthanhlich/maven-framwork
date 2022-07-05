@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="NopCommerce - User" parallel="method" thread-count="3">
+
+	<listeners>
+		<listener class-name="commons.MethodListener"/>
+	</listeners>
+	
+  <parameter name="environment" value ="DEV" />
+  
+   <test name="Run on CHROME">
+	<parameter name="browser" value="chrome" />	
+	
+	<packaage name="com.nopcommerce.user"/>
+    <classes>
+    
+      <class name="com.nopcommerce.user.Level_20_Data_manager_json"/>
+<!--       <class name="com.nopcommerce.user.Level_20_Faker_data_14"/> -->
+      
+      <method name=""></method>
+      
+    </classes>
+  </test>
+</suite> <!-- Suite -->

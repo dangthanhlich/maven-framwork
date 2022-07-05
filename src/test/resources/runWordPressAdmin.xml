@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="WordPress-Admin">
+
+	<listeners>
+		<listener class-name="commons.MethodListener" />
+		<listener class-name="reportConfig.ReportNGListener" />
+		<!-- <listener class-name="reportConfig.ExtentTestListener"/> -->
+		<!-- <listener class-name="reportConfig.AllureTestListener" /> -->
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener
+			class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+
+	<parameter name="urlAdmin"
+		value="http://localhost/automationfc/wp-admin" />
+	<parameter name="urlUser"
+		value="http://localhost/automationfc/" />
+
+	<test name="Run on HeadLess Chrome">
+		<parameter name="browser" value="h_chrome" />
+		<!-- <classes> -->
+		<!-- <parameter name="browser" value="chrome" /> -->
+		<!-- <class name="com.nopcomerce.common.Common_01_Register_Cookie" /> -->
+
+		<packages>
+			<package name="com.wordpress.admin" />
+		</packages>
+	</test>
+	
+	<test name="Run on HeadLess Firefox">
+		<parameter name="browser" value="h_firefox" />
+		<!-- <classes> -->
+		<!-- <parameter name="browser" value="chrome" /> -->
+		<!-- <class name="com.nopcomerce.common.Common_01_Register_Cookie" /> -->
+
+		<packages>
+			<package name="com.wordpress.admin" />
+		</packages>
+	</test>
+</suite> <!-- Suite -->

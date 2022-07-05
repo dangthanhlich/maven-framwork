@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="NopCommerce">
+  <test name="Run on Headless  Firefox">
+    <classes>
+      <parameter name="browser" value="h_firefox" />
+      <class name="com.nopcommerce.user.Level_04_Multiple_browser"/>
+    </classes>
+  </test> <!-- Test -->
+   <test name="Run on Headless chrome">
+    <classes>
+      <parameter name="browser" value="h_chrome" />
+      <class name="com.nopcommerce.user.Level_04_Multiple_browser"/>
+    </classes>
+  </test> 
+</suite> <!-- Suite -->

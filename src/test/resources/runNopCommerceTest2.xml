@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="NopCommerce">
+  <test name="Run on Firefox">
+    <classes>
+      <parameter name="browser" value="firefox" />
+      <class name="javaBasic.Topic_07_switch_case"/>
+    </classes>
+  </test> <!-- Test -->
+   <test name="Run on chrome">
+    <classes>
+      <parameter name="browser" value="chrome" />
+      <class name="javaBasic.Topic_07_switch_case"/>
+    </classes>
+  </test> 
+   <test name="Run on Edge">
+    <classes>
+      <parameter name="browser" value="edge" />
+      <class name="javaBasic.Topic_07_switch_case"/>
+    </classes>
+  </test> 
+   <test name="Run on IE">
+    <classes>
+      <parameter name="browser" value="ie" />
+      <class name="javaBasic.Topic_07_switch_case"/>
+    </classes>
+  </test> 
+</suite> <!-- Suite -->

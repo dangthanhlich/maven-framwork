@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="NopCommerce">
+  <test name="Run on Firefox">
+    <classes>
+      <parameter name="browser" value="firefox" />
+      <class name="com.nopcommerce.user.Level_04_Multiple_browser"/>
+    </classes>
+  </test> <!-- Test -->
+   <test name="Run on chrome">
+    <classes>
+      <parameter name="browser" value="chrome" />
+      <class name="com.nopcommerce.user.Level_04_Multiple_browser"/>
+    </classes>
+  </test> 
+   <test name="Run on Edge">
+    <classes>
+      <parameter name="browser" value="edge" />
+      <class name="com.nopcommerce.user.Level_04_Multiple_browser"/>
+    </classes>
+  </test> 
+    <test name="Run on coc coc">
+    <classes>
+      <parameter name="browser" value="coccoc" />
+      <class name="com.nopcommerce.user.Level_04_Multiple_browser"/>
+    </classes>
+  </test> 
+  <test name="Run on brave">
+    <classes>
+      <parameter name="browser" value="brave" />
+      <class name="com.nopcommerce.user.Level_04_Multiple_browser"/>
+    </classes>
+  </test>
+</suite> <!-- Suite -->

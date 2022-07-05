@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Jquery Upload">
+  <parameter name="url" value ="https://blueimp.github.io/jQuery-File-Upload/" />
+   <test name="Run on FIREFOX">
+    <classes>
+      <parameter name="browser" value="firefox" />
+      <class name="com.jquery.Level_11_Upload_Files"/>
+    </classes>
+  </test>
+  
+  <test name="Run on CHROME">
+    <classes>
+      <parameter name="browser" value="chrome" />
+      <class name="com.jquery.Level_11_Upload_Files"/>
+    </classes>
+  </test>
+  
+  <test name="Run on EDGE">
+    <classes>
+      <parameter name="browser" value="edge" />
+      <class name="com.jquery.Level_11_Upload_Files"/>
+    </classes>
+  </test>
+</suite> <!-- Suite -->
