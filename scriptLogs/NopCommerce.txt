@@ -1,0 +1,16 @@
+[2022-07-05 16:31:34,354] Register - step 01: Navigate to 'register' page
+[2022-07-05 16:31:35,518] Register - step 02 : enter to firstname textbox with value is 'Automation'
+[2022-07-05 16:31:35,770] Register - step 03 : enter to lastName textbox with value is 'FC'
+[2022-07-05 16:31:35,962] Register - step 04 : enter to emailAddress textbox with value is 'afc5125@gmail.vn'
+[2022-07-05 16:31:36,152] Register - step 05 : enter to validPassword textbox with value is '123456'
+[2022-07-05 16:31:36,327] Register - step 06 : enter to confirmPassword textbox with value is '123456'
+[2022-07-05 16:31:36,514] Register - step 07 : click to Register button
+[2022-07-05 16:31:37,401] Register - step 08 : Verify register sucess message is displayed
+[2022-07-05 16:31:37,472] Register - step 09 : click to logout link
+[2022-07-05 16:31:38,408] Login - step 01: Navigate to login page
+[2022-07-05 16:31:39,124] Login - step 02: Enter to Email textbox with values is 'afc5125@gmail.vn'
+[2022-07-05 16:31:39,317] Login - step 03: Enter to password textbox with values is '123456'
+[2022-07-05 16:31:39,504] Login - step 04: Click to login button
+[2022-07-05 16:31:40,367] Login - step 05: Verify 'My Account' link is displayed
+[2022-07-05 16:31:40,445] Login - step 06: Navigate to 'My account' page
+[2022-07-05 16:31:41,075] Login - step 07: Verify 'Customer Infor' page is displayed

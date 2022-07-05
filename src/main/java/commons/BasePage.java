@@ -44,6 +44,8 @@ public class BasePage {
 		return new BasePage();
 	}
 
+
+
 	public void openPageUrl(WebDriver driver, String pageUrl) {
 		driver.get(pageUrl);
 	}

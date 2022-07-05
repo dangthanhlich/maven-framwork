@@ -46,7 +46,7 @@ public class ReportNGListener implements ITestListener{
 		Object testClass = result.getInstance();
 		WebDriver webDriver = ((BaseTest) testClass).getDriverInstance() ;
 
-		//c1:đư�?ng dẫn tên hình
+
 		//String screenshotPath = captureScreenshot(webDriver, result.getName());
 		
 		//c2:base 64
@@ -64,7 +64,7 @@ public class ReportNGListener implements ITestListener{
 	}
 	
 	public String captureScreenshot(WebDriver driver, String screenshotName) {
-		//hàm chụp hình
+
 		try {
 			Calendar calendar = Calendar.getInstance();
 			SimpleDateFormat formater = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
