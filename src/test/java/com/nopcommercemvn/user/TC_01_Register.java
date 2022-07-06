@@ -17,7 +17,7 @@ public class TC_01_Register extends BaseTest {
     public void beforeClass(String browserName) {
         driver = getBrowserDriver(browserName);
 
-        //homePage = PageGeneratorManager.getUserHomePage(driver);
+        homePage = PageGeneratorManager.getUserHomePage(driver);
 
         firstName = "Automation";
         lastName = "FC";
@@ -58,5 +58,7 @@ public class TC_01_Register extends BaseTest {
     }
 
     private WebDriver driver;
+    TCUSerHomePageObject homePage;
+    TCUSerRegisterPageObject registerPage;
     String firstName, lastName, emailAddress, validPassword;
 }
