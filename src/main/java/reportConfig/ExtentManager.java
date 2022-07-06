@@ -1,4 +1,4 @@
-package reportConfigv5;
+package reportConfig;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;

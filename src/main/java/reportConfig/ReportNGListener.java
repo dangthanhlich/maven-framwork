@@ -1,4 +1,4 @@
-package reportConfigv5;
+package reportConfig;
 
 import java.io.File;
 import java.io.IOException;

@@ -3,20 +3,16 @@
 
 	<listeners>
 		<listener class-name="commons.MethodListener"/>
+        <listener class-name="reportConfig.ExtentTestListener"/>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 	</listeners>
 	
   <parameter name="environment" value ="DEV" />
-  
    <test name="Run on CHROME">
-	<parameter name="browser" value="chrome" />	
-	
-	<packaage name="com.nopcommerce.user"/>
+	<parameter name="browser" value="chrome" />
     <classes>
-    
-      <class name="com.nopcommerce.user.Level_14_Log_Report_TestNG"/>
-      
-      <method name=""></method>
-      
+      <class name="com.nopcommerce.user.Level_16_ExtentV5_Screenshot"/>
     </classes>
   </test>
 </suite> <!-- Suite -->

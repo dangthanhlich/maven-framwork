@@ -1,4 +1,4 @@
-package reportConfigv5;
+package reportConfig;
 
 import java.util.HashMap;
 import java.util.Map;
