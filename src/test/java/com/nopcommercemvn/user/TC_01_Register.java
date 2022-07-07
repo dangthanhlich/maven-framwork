@@ -62,7 +62,7 @@ public class TC_01_Register extends BaseTest {
 
 	}
 
-
+	@Test
 	public void Register_user_02_Invalid_Email(Method method) {
 		ExtentTestManager.getTest().log(Status.INFO, "Register - Step 01:  refresh page");
 		registerPage.refereshCurrentPage(driver);
@@ -150,7 +150,7 @@ public class TC_01_Register extends BaseTest {
 		verifyTrue(registerPage.isErrorMessageEmailExistsDisplayed("The specified email already exists"));
 	}
 
-
+	@Test
 	public void Register_user_05_Password_less_than_6_characters(Method method) {
 		ExtentTestManager.getTest().log(Status.INFO, "Register - Step 01:  refresh page");
 		registerPage.refereshCurrentPage(driver);
@@ -173,7 +173,7 @@ public class TC_01_Register extends BaseTest {
 		registerPage.clickToRegisterButton();
 
 		ExtentTestManager.getTest().log(Status.INFO, "Register - Step 08:  Verify register success message is displayed");
-		verifyTrue(registerPage.isErrorPasswordMessageDisplayed("Password must meet the following rules:"," must have at least 6 characters"));
+		verifyTrue(registerPage.isErrorPasswordMessageDisplayed("Password must meet the following rules:","must have at least 6 characters"));
 	}
 
 	@Test
