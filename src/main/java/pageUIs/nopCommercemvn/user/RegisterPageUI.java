@@ -1,4 +1,4 @@
-package pageUIs.nopCommerce.usertc.user;
+package pageUIs.nopCommercemvn.user;
 
 public class RegisterPageUI {
     public static final String FIRST_NAME_TEXTBOX = "xpath = //input[@id='FirstName']";
@@ -8,11 +8,8 @@ public class RegisterPageUI {
     public static final String CONFIRM_PASSWORD_TEXTBOX = "xpath = //input[@id='ConfirmPassword']";
     public static final String REGISTER_BUTTON = "xpath = //button[@id='register-button']";
 
-    public static final String FIRST_NAME_ERROR_MESSAGE = "xpath=//span[@id='FirstName-error']";
-    public static final String LAST_NAME_ERROR_MESSAGE = "xpath=//span[@id='LastName-error']";
-    public static final String EMAIL_ERROR_MESSAGE = "xpath= //span[@id='Email-error']";
-    public static final String PASSWORD_ERROR_MESSAGE = "xpath= //span[@id='Password-error']";
-    public static final String CONFIRM_PASSWORD_MESSAGE = "xpath=//span[@id='ConfirmPassword-error']";
+    ////span[@class='field-validation-error']//span[text()='First name is required.']
+    public static final String INPUT_ERROR_MESSAGE = "xpath=//span[@class='field-validation-error']//span[text()='%s']";
     //	public static final String REGISTER_SUCCESS_MESSAGE = "xpath=//div[@class='result' and text()='Your registration completed']";
     public static final String REGISTER_SUCCESS_MESSAGE = "xpath=//div[@class='result' and text()='%s']";
     public static final String CONTINUE_BUTTON = "xpath=//div[@class='buttons']/a";

@@ -1,4 +1,4 @@
-package com.nopcommerce.user_tc_nopcomerce;
+package com.nopcommercemvn.user;
 
 import com.aventstack.extentreports.Status;
 import commons.BaseTest;

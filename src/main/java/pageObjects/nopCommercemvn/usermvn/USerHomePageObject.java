@@ -1,11 +1,19 @@
-package pageObjects.nopCommerce.user;
+package pageObjects.nopCommercemvn.usermvn;
 
+import commons.BasePage;
 import org.openqa.selenium.WebDriver;
+import pageUIs.nopCommercemvn.user.HomePageUI;
 
-public class TCUSerHomePageObject {
+public class USerHomePageObject  extends BasePage {
     private WebDriver driver;
 
-    public TCUSerHomePageObject(WebDriver driver) {
+    public USerHomePageObject(WebDriver driver) {
         this.driver = driver;
+    }
+
+    public USerRegisterPageObject openRegisterPage() {
+        waitForElementClickable(driver, HomePageUI.REGISTER_LINK);
+        clickToElement(driver, HomePageUI.REGISTER_LINK);
+        return PageGeneratorManager.getUserRegisterPage(driver);
     }
 }

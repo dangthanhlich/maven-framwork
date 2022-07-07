@@ -1,4 +1,4 @@
-package pageUIs.nopCommerce.usertc.user;
+package pageUIs.nopCommercemvn.user;
 
 public class HomePageUI {
     public static final String REGISTER_LINK = "css= a[class='ico-register']";

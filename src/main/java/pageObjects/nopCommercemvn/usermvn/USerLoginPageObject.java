@@ -1,11 +1,11 @@
-package pageObjects.nopCommerce.user;
+package pageObjects.nopCommercemvn.usermvn;
 
 import org.openqa.selenium.WebDriver;
 
-public class TCUSerLoginPageObject {
+public class USerLoginPageObject {
     private WebDriver driver;
 
-    public TCUSerLoginPageObject(WebDriver driver) {
+    public USerLoginPageObject(WebDriver driver) {
         this.driver = driver;
     }
 }

@@ -180,7 +180,7 @@
                 <configuration>
                     <!-- Run TestNG xml file -->
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/runNopCommerceUser.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/runNopCommerceUsermvn.xml</suiteXmlFile>
                     </suiteXmlFiles>
 
                     <!-- Argument -->
