@@ -4,6 +4,7 @@ import commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import pageUIs.nopCommercemvn.user.AddressesPageUI;
 import pageUIs.nopCommercemvn.user.CustomerInforPageUI;
+import pageUIs.nopCommercemvn.user.MyAccountPageUI;
 
 public class AddressesPageObject extends BasePage {
     private WebDriver driver;
@@ -85,5 +86,11 @@ public class AddressesPageObject extends BasePage {
     public boolean isGenderDisplayed(String firstName, String lastName) {
         waitForElementVisible(driver, AddressesPageUI.FIRST_LAST_NAME, firstName,lastName);
         return isElementDisplayed(driver, AddressesPageUI.FIRST_LAST_NAME, firstName,lastName);
+    }
+
+    public ChangePasswordPageObject openAddressAddNewPage(String change_password) {
+        waitForElementClickable(driver, MyAccountPageUI.ITEM_MENU_LIST,change_password);
+        clickToElement(driver, MyAccountPageUI.ITEM_MENU_LIST,change_password);
+        return PageGeneratorManager.getChangePasswordPage(driver);
     }
 }

@@ -3,6 +3,7 @@ package pageObjects.nopCommercemvn.usermvn;
 import commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import pageUIs.nopCommercemvn.user.MyAccountPageUI;
+import pageUIs.nopCommercemvn.user.MyProductReviewsPageUI;
 
 public class MyAccountPageObject extends BasePage {
     private WebDriver driver;
@@ -17,4 +18,16 @@ public class MyAccountPageObject extends BasePage {
         return PageGeneratorManager.getCustomerInforPage(driver);
     }
 
+    public MyProductReviewsPageObject clickTMyProductReviewsLink(String my_product_reviews) {
+        waitForElementClickable(driver, MyAccountPageUI.ITEM_MENU_LIST,my_product_reviews);
+        clickToElement(driver, MyAccountPageUI.ITEM_MENU_LIST,my_product_reviews);
+        return PageGeneratorManager.getMyProductReviewsPage(driver);
+    }
+
+
+//    public MyProductReviewsPageObject clickTMyProductReviewsLink() {
+//        waitForElementClickable(driver, MyProductReviewsPageUI.PRODUCT_REVIEW);
+//        clickToElement(driver, MyProductReviewsPageUI.PRODUCT_REVIEW);
+//        return PageGeneratorManager.getMyProductReviewsPage(driver);
+//    }
 }

@@ -24,4 +24,9 @@ public class USerHomePageObject  extends BasePage {
     }
 
 
+    public ProductBooksPageObject openAddressAddNewPage(String menulinkproduct) {
+        waitForElementClickable(driver, HomePageUI.MENU_LINK,menulinkproduct);
+        clickToElement(driver, HomePageUI.MENU_LINK,menulinkproduct);
+        return PageGeneratorManager.getProductBooksPage(driver);
+    }
 }

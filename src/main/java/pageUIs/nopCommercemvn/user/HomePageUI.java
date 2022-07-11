@@ -8,4 +8,7 @@ public class HomePageUI {
 
     //ul[@class='list']//li//a[text()='Customer info']
     public static final String ITEM_LINK ="xpath=//ul[@class='list']//li//a[text()='%s']";
+
+    //div[@class='header-menu']//ul//li//a[text()='Books ']
+    public static final String MENU_LINK="xpath=//div[@class='header-menu']//ul//li//a[text()='%s']";
 }

@@ -2,7 +2,9 @@ package pageObjects.nopCommercemvn.usermvn;
 
 import commons.BasePage;
 import org.openqa.selenium.WebDriver;
+import pageUIs.nopCommercemvn.user.HomePageUI;
 import pageUIs.nopCommercemvn.user.LoginPageUI;
+import pageUIs.nopCommercemvn.user.MyAccountPageUI;
 import pageUIs.nopCommercemvn.user.RegisterPageUI;
 
 public class USerLoginPageObject extends BasePage {
@@ -12,10 +14,10 @@ public class USerLoginPageObject extends BasePage {
         this.driver = driver;
     }
 
-    public void clickToLoginButton() {
-        waitForElementClickable(driver, LoginPageUI.LOGIN_BUTTON);
-        clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
-    }
+//    public void clickToLoginButton() {
+//        waitForElementClickable(driver, LoginPageUI.LOGIN_BUTTON);
+//        clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
+//    }
 
     public boolean isErrorMessageDisplayed(String message) {
         waitForElementVisible(driver, LoginPageUI.INPUTERRORMESSAE, message);
@@ -35,5 +37,11 @@ public class USerLoginPageObject extends BasePage {
     public boolean isErrorMessageNoAccountFoundDisplayed(String message1, String message2) {
         waitForElementVisible(driver, LoginPageUI.INCORRECT_MESSAGE,message1,message2);
         return isElementDisplayed(driver, LoginPageUI.INCORRECT_MESSAGE,message1,message2);
+    }
+
+    public USerHomePageObject clickToLoginButton() {
+        waitForElementClickable(driver, LoginPageUI.LOGIN_BUTTON);
+        clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
+        return  PageGeneratorManager.getUserHomePage(driver);
     }
 }

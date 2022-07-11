@@ -138,7 +138,7 @@ public class TC_02_Login extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 03:  Enter to Password textbox with value is '" + validPassword + "'");
         loginPage.inputToPasswordTextbox(validPassword);
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 04: Click to button Login");
-        loginPage.clickToLoginButton();
+        homePage = loginPage.clickToLoginButton();
    }
 
     @AfterClass
