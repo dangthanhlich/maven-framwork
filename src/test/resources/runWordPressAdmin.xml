@@ -22,9 +22,12 @@
 		<!-- <parameter name="browser" value="chrome" /> -->
 		<!-- <class name="com.nopcomerce.common.Common_01_Register_Cookie" /> -->
 
-		<packages>
-			<package name="com.wordpress.admin" />
-		</packages>
+<!--		<packages>-->
+<!--			<package name="com.wordpress.admin" />-->
+<!--		</packages>-->
+		<classes>
+			<class name="com.wordpress.admin.Post_01_Create_Read_Update_Delete_Search"/>
+		</classes>
 	</test>
 	
 	<test name="Run on HeadLess Firefox">

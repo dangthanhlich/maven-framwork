@@ -1,4 +1,4 @@
 package pageUIs.nopCommercemvn.user;
 
-public class ProductBooksPageUI {
+public class ChangePasswordPageUI {
 }

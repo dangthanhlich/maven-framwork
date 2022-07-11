@@ -3,6 +3,7 @@ package pageObjects.nopCommercemvn.usermvn;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
+import pageUIs.nopCommercemvn.user.HomePageUI;
 import pageUIs.nopCommercemvn.user.RegisterPageUI;
 
 public class USerRegisterPageObject extends BasePage {
@@ -66,5 +67,11 @@ public class USerRegisterPageObject extends BasePage {
 	public boolean isErrorPasswordMessageDisplayed(String message1,String message2) {
 		waitForElementVisible(driver, RegisterPageUI.PASSWORD_RULES_ERROR_MESSAGE,message1,message2);
 		return isElementDisplayed(driver, RegisterPageUI.PASSWORD_RULES_ERROR_MESSAGE,message1,message2);
+	}
+
+	public MyAccountPageObject clickToMyAccountLink() {
+		waitForElementClickable(driver, HomePageUI.MY_ACCOUNT_LINK);
+		clickToElement(driver, HomePageUI.MY_ACCOUNT_LINK);
+		return PageGeneratorManager.getMyAccountPage(driver);
 	}
 }

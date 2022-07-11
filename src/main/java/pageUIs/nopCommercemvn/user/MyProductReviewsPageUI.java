@@ -1,2 +1,4 @@
-package pageUIs.nopCommercemvn.user;public class MyProductReviewsPageUI {
+package pageUIs.nopCommercemvn.user;
+
+public class MyProductReviewsPageUI {
 }
