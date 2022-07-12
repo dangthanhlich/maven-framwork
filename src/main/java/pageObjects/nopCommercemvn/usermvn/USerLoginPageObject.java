@@ -6,6 +6,7 @@ import pageUIs.nopCommercemvn.user.HomePageUI;
 import pageUIs.nopCommercemvn.user.LoginPageUI;
 import pageUIs.nopCommercemvn.user.MyAccountPageUI;
 import pageUIs.nopCommercemvn.user.RegisterPageUI;
+import pageUIs.wordpress.AdminPostAddNewPgeUI;
 
 public class USerLoginPageObject extends BasePage {
     private WebDriver driver;
@@ -29,9 +30,11 @@ public class USerLoginPageObject extends BasePage {
         sendkeyToElement(driver,LoginPageUI.EMAIL_TEXTBOX,EmailAddress);
     }
 
-    public void inputToPasswordTextbox(String validPassword) {
+    public void inputToPasswordTextbox(String password) {
+//        waitForElementClickable(driver, LoginPageUI.PASSWORD_TEXTBOX);
+//        clickToElement(driver, LoginPageUI.PASSWORD_TEXTBOX);
         waitForElementVisible(driver, LoginPageUI.PASSWORD_TEXTBOX);
-        sendkeyToElement(driver,LoginPageUI.PASSWORD_TEXTBOX,validPassword);
+        sendkeyToElement(driver,LoginPageUI.PASSWORD_TEXTBOX,password);
     }
 
     public boolean isErrorMessageNoAccountFoundDisplayed(String message1, String message2) {

@@ -74,4 +74,10 @@ public class USerRegisterPageObject extends BasePage {
 		clickToElement(driver, HomePageUI.MY_ACCOUNT_LINK);
 		return PageGeneratorManager.getMyAccountPage(driver);
 	}
+
+    public SearchPageObject clickToSearchLink() {
+		waitForElementClickable(driver,HomePageUI.SEARCH_FOOTER_LINK);
+		clickToElement(driver, HomePageUI.SEARCH_FOOTER_LINK);
+		return PageGeneratorManager.getSearchPage(driver);
+    }
 }

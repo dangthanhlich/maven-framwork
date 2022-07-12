@@ -25,9 +25,4 @@ public class MyAccountPageObject extends BasePage {
     }
 
 
-//    public MyProductReviewsPageObject clickTMyProductReviewsLink() {
-//        waitForElementClickable(driver, MyProductReviewsPageUI.PRODUCT_REVIEW);
-//        clickToElement(driver, MyProductReviewsPageUI.PRODUCT_REVIEW);
-//        return PageGeneratorManager.getMyProductReviewsPage(driver);
-//    }
 }

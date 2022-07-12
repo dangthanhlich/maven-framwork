@@ -24,13 +24,13 @@ public class TC_03_My_Account extends BaseTest {
         lastName = "dang";
         emailAddress = "afc" + generateFakeNumber() + "@gmail.vn";
         validPassword = "123456";
-        inValidEmailAddress = "#123";
-        validNewPassword = "1234567";
+        validNewPassword = "123456789";
         invalidPassword = "456789";
         editFirstName = "Automation";
         editLastName = "FC";
         editEmailAddress = "edit" + generateFakeNumber() + "@gmail.vn";
         inemailAddress = "auto" + generateFakeNumber() + "@gmail.vn";
+        inValidEmailAddress = "#123";
         date = "10";
         month = "October";
         year = "2000";
@@ -47,7 +47,7 @@ public class TC_03_My_Account extends BaseTest {
     }
 
     @Test
-    public void Register_user(Method method) {
+    public void My_Account_01_Register_user(Method method) {
         ExtentTestManager.startTest(method.getName(), "Register to system");
 
         ExtentTestManager.getTest().log(Status.INFO, "Register - Step 01: open page");
@@ -77,7 +77,9 @@ public class TC_03_My_Account extends BaseTest {
     }
 
     @Test
-    public void My_Account_01_Customer_Infor(Method method) {
+    public void My_Account_02_Customer_Infor(Method method) {
+        ExtentTestManager.startTest(method.getName(), "My Account to system");
+
         ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 01: open page My Account");
         myAccountPage = registerPage.clickToMyAccountLink();
 
@@ -117,9 +119,10 @@ public class TC_03_My_Account extends BaseTest {
     }
 
     @Test
-    public void My_Account_02_Addresses(Method method) {
+    public void My_Account_03_Addresses(Method method) {
+        ExtentTestManager.startTest(method.getName(), "Addresses to system");
 
-        ExtentTestManager.startTest(method.getName(), "Addresses to system TC 02");
+        ExtentTestManager.getTest().log(Status.INFO,"Addresses to system TC 02");
         AddressesPage = CustomerInforPage.openAddressAddNewPage("Addresses");
 
         ExtentTestManager.getTest().log(Status.INFO, "Addresses - Step 01: Add new button");
@@ -170,8 +173,10 @@ public class TC_03_My_Account extends BaseTest {
 
 
     @Test
-    public void My_Account_03_Change_Password(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Change Password to system TC 03");
+    public void My_Account_04_Change_Password(Method method) {
+        ExtentTestManager.startTest(method.getName(), "Change Password to system");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Change Password to system");
         ChangePasswordPage = AddressesPage.openAddressAddNewPage("Change password");
 
         ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 01: Enter to old Password '" + validPassword + "'");
@@ -198,8 +203,8 @@ public class TC_03_My_Account extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 08: open page");
         loginPage = homePage.openLoginPage();
 
-        ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 09:  Enter to Email textbox with value is '" + emailAddress + "'");
-        loginPage.inputToEmailTextbox(emailAddress);
+        ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 09:  Enter to Email textbox with value is '" + editEmailAddress + "'");
+        loginPage.inputToEmailTextbox(editEmailAddress);
 
         ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 10:  Enter to Password textbox with value is '" + validPassword + "'");
         loginPage.inputToPasswordTextbox(validPassword);
@@ -210,11 +215,8 @@ public class TC_03_My_Account extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 12: Verify Wrong password message is requied");
         verifyTrue(loginPage.isErrorMessageNoAccountFoundDisplayed("Login was unsuccessful. Please correct the errors and try again.", "The credentials provided are incorrect"));
 
-        ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 13:  refresh page");
-        loginPage.refereshCurrentPage(driver);
-
-        ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 14:  Enter to Email textbox with value is '" + emailAddress + "'");
-        loginPage.inputToEmailTextbox(emailAddress);
+        ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 14:  Enter to Email textbox with value is '" + editEmailAddress + "'");
+        loginPage.inputToEmailTextbox(editEmailAddress);
 
         ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 15:  Enter to Password textbox with value is '" + validNewPassword + "'");
         loginPage.inputToPasswordTextbox(validNewPassword);
@@ -224,8 +226,9 @@ public class TC_03_My_Account extends BaseTest {
     }
 
 
+
     @Test
-    public void My_Account_04_My_Product_reviews(Method method) {
+    public void My_Account_05_My_Product_reviews(Method method) {
         ExtentTestManager.startTest(method.getName(), "My Account product review");
         ExtentTestManager.getTest().log(Status.INFO, "My product reviews - Step 01:Open books product");
         ProductBooksPage = homePage.openAddressAddNewPage("Books ");
