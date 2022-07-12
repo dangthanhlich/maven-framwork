@@ -23,47 +23,17 @@ public class TC_02_Login extends BaseTest {
     public void beforeClass(String browserName) {
         driver = getBrowserDriver(browserName);
 
+        emailAddress = Common_01_Register.emailAddress;
+        validPassword = Common_01_Register.validPassword;
         homePage = PageGeneratorManager.getUserHomePage(driver);
 
         firstName = "Automation";
         lastName = "FC";
-        emailAddress = "afc" + generateFakeNumber() + "@gmail.vn";
         inemailAddress = "auto" + generateFakeNumber() + "@gmail.vn";
         inValidEmailAddress = "#123";
-        validPassword = "123456";
         invalidPassword = "456789";
     }
-    @Test
-    public void Register_user(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Register to system");
 
-        ExtentTestManager.getTest().log(Status.INFO, "Register - Step 01: open page");
-        registerPage = homePage.openRegisterPage();
-
-        ExtentTestManager.getTest().log(Status.INFO, "Register - Step 02:  Enter to Firstname textbox with value is '" + firstName + "'");
-        registerPage.inputToFirstnameTextbox(firstName);
-
-        ExtentTestManager.getTest().log(Status.INFO, "Register - Step 03:  Enter to LastName textbox with value is '" + lastName + "'");
-        registerPage.inputToLastnameTextbox(lastName);
-
-        ExtentTestManager.getTest().log(Status.INFO, "Register - Step 04:  Enter to Email textbox with value is '" + emailAddress + "'");
-        registerPage.inputToEmailTextbox(emailAddress);
-
-        ExtentTestManager.getTest().log(Status.INFO, "Register - Step 05:  Enter to validPassword textbox with value is '" + validPassword + "'");
-        registerPage.inputToPasswordTextbox(validPassword);
-
-        ExtentTestManager.getTest().log(Status.INFO, "Register - Step 06:  Enter to validPassword textbox with value is '" + validPassword + "'");
-        registerPage.inputToConfirmPasswordTextbox(validPassword);
-
-        ExtentTestManager.getTest().log(Status.INFO, "Register - Step 07: Click to button Register");
-        registerPage.clickToRegisterButton();
-
-        ExtentTestManager.getTest().log(Status.INFO, "Register - Step 08:  Verify register success message is displayed");
-        verifyTrue(registerPage.isRegisterSuccessMessage("Your registration completed"));
-
-        ExtentTestManager.getTest().log(Status.INFO, "Register - Step 07: Click to button logout");
-        homePage = registerPage.clickToLogoutLink();
-    }
     @Test
     public void Login_user_01_Empty_Data(Method method) {
         ExtentTestManager.startTest(method.getName(), "Login to system");
@@ -77,8 +47,9 @@ public class TC_02_Login extends BaseTest {
 
     @Test
     public void Login_user_02_Invalid_Email(Method method) {
+        ExtentTestManager.startTest(method.getName(), "Login to system");
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 01:  refresh page");
-        registerPage.refereshCurrentPage(driver);
+        loginPage.refereshCurrentPage(driver);
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02:  Enter to Email textbox with value is '" + inValidEmailAddress + "'");
         loginPage.inputToEmailTextbox(inValidEmailAddress);
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 03: Click to button Login");
@@ -89,6 +60,7 @@ public class TC_02_Login extends BaseTest {
 
     @Test
     public void Login_user_03_Valid_Data(Method method) {
+        ExtentTestManager.startTest(method.getName(), "Login to system");
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 01:  refresh page");
         loginPage.refereshCurrentPage(driver);
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02:  Enter to Email textbox with value is '" + inemailAddress + "'");
@@ -103,6 +75,7 @@ public class TC_02_Login extends BaseTest {
 
     @Test
     public void Login_user_04_Email_Data_Exists(Method method) {
+        ExtentTestManager.startTest(method.getName(), "Login to system");
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 01:  refresh page");
         loginPage.refereshCurrentPage(driver);
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02:  Enter to Email textbox with value is '" + emailAddress + "'");
@@ -116,6 +89,7 @@ public class TC_02_Login extends BaseTest {
 
     @Test
     public void Login_user_05_Password_less_than_6_characters(Method method) {
+        ExtentTestManager.startTest(method.getName(), "Login to system");
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 01:  refresh page");
         loginPage.refereshCurrentPage(driver);
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02:  Enter to Email textbox with value is '" + emailAddress + "'");
@@ -131,6 +105,7 @@ public class TC_02_Login extends BaseTest {
 
     @Test
     public void Login_user_06_confirm_password(Method method) {
+        ExtentTestManager.startTest(method.getName(), "Login to system");
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 01:  refresh page");
         loginPage.refereshCurrentPage(driver);
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02:  Enter to Email textbox with value is '" + emailAddress + "'");

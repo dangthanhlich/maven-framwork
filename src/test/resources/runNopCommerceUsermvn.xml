@@ -12,7 +12,8 @@
    <test name="Run on CHROME">
 	<parameter name="browser" value="chrome" />
     <classes>
-      <class name="com.nopcommercemvn.user.TC_03_Search"/>
+        <class name="com.nopcommercemvn.user.Common_01_Register"/>
+        <class name="com.nopcommercemvn.user.TC_04_Sort_Display_Paging"/>
     </classes>
   </test>
 </suite> <!-- Suite -->

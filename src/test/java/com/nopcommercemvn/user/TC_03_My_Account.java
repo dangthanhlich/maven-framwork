@@ -18,12 +18,12 @@ public class TC_03_My_Account extends BaseTest {
     @BeforeClass
     public void beforeClass(String browserName) {
         driver = getBrowserDriver(browserName);
+        emailAddress = Common_01_Register.emailAddress;
+        validPassword = Common_01_Register.validPassword;
         homePage = PageGeneratorManager.getUserHomePage(driver);
 
         firstName = "dao";
         lastName = "dang";
-        emailAddress = "afc" + generateFakeNumber() + "@gmail.vn";
-        validPassword = "123456";
         validNewPassword = "123456789";
         invalidPassword = "456789";
         editFirstName = "Automation";
@@ -44,82 +44,67 @@ public class TC_03_My_Account extends BaseTest {
         reviewTitle="review product";
         reviewText="review product books good";
 
-    }
 
-    @Test
-    public void My_Account_01_Register_user(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Register to system");
-
-        ExtentTestManager.getTest().log(Status.INFO, "Register - Step 01: open page");
-        registerPage = homePage.openRegisterPage();
-
-        ExtentTestManager.getTest().log(Status.INFO, "Register - Step 02:  Enter to Firstname textbox with value is '" + firstName + "'");
-        registerPage.inputToFirstnameTextbox(firstName);
-
-        ExtentTestManager.getTest().log(Status.INFO, "Register - Step 03:  Enter to LastName textbox with value is '" + lastName + "'");
-        registerPage.inputToLastnameTextbox(lastName);
-
-        ExtentTestManager.getTest().log(Status.INFO, "Register - Step 04:  Enter to Email textbox with value is '" + emailAddress + "'");
-        registerPage.inputToEmailTextbox(emailAddress);
-
-        ExtentTestManager.getTest().log(Status.INFO, "Register - Step 05:  Enter to validPassword textbox with value is '" + validPassword + "'");
-        registerPage.inputToPasswordTextbox(validPassword);
-
-        ExtentTestManager.getTest().log(Status.INFO, "Register - Step 06:  Enter to validPassword textbox with value is '" + validPassword + "'");
-        registerPage.inputToConfirmPasswordTextbox(validPassword);
-
-        ExtentTestManager.getTest().log(Status.INFO, "Register - Step 07: Click to button Register");
-        registerPage.clickToRegisterButton();
-
-        ExtentTestManager.getTest().log(Status.INFO, "Register - Step 08:  Verify register success message is displayed");
-        verifyTrue(registerPage.isRegisterSuccessMessage("Your registration completed"));
 
     }
 
+
     @Test
-    public void My_Account_02_Customer_Infor(Method method) {
+    public void My_Account_01_Customer_Infor(Method method) {
         ExtentTestManager.startTest(method.getName(), "My Account to system");
 
-        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 01: open page My Account");
-        myAccountPage = registerPage.clickToMyAccountLink();
+        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 01: open page login");
 
-        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 02: open page Customer Infor");
+        loginPage = homePage.openLoginPage();
+        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 02:enter to email is value");
+        loginPage.inputToEmailTextbox(emailAddress);
+
+        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 03: enter to password is value");
+        loginPage.inputToPasswordTextbox(validPassword);
+
+        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 04: click to logout buttont");
+        loginPage.clickToLoginButton();
+
+        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 05: open page My Account");
+        myAccountPage = homePage.clickToMyAccountLink();
+
+        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 06: open page Customer Infor");
         CustomerInforPage = myAccountPage.openListAccountPage("Customer info");
 
-        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 03:choose to male or Female");
+        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 07:choose to male or Female");
         CustomerInforPage.genderMaleOrFemale("male");
 
 
-        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 04:  Enter to Firstname textbox with value is '" + editFirstName + "'");
+        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 08:  Enter to Firstname textbox with value is '" + editFirstName + "'");
         CustomerInforPage.inputToFirstnameTextbox(editFirstName);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 05:  Enter to LastName textbox with value is '" + editLastName + "'");
+        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 09:  Enter to LastName textbox with value is '" + editLastName + "'");
         CustomerInforPage.inputToLastnameTextbox(editLastName);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 05: Select 'DAY' item in dropdown");
+        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 10: Select 'DAY' item in dropdown");
         CustomerInforPage.dropdownItemDay(date);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 06: Select 'MONTH' item in dropdown");
+        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 11: Select 'MONTH' item in dropdown");
         CustomerInforPage.dropdownItemMonth(month);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 07: Select 'YEAR' item in dropdown");
+        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 12: Select 'YEAR' item in dropdown");
         CustomerInforPage.dropdownItemYear(year);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 08:  Enter to Email textbox with value is '" + editEmailAddress + "'");
+        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 13:  Enter to Email textbox with value is '" + editEmailAddress + "'");
         CustomerInforPage.inputToEmailTextbox(editEmailAddress);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 09:  Enter to Email textbox with value is '" + companyAddress + "'");
+        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 14:  Enter to Email textbox with value is '" + companyAddress + "'");
         CustomerInforPage.inputToCompanyTextbox(companyAddress);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 10: Click to button Save");
+        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor - Step 15: Click to button Save");
         CustomerInforPage.clickToSaveButton();
 
-        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor -step 11: Verify gender is requied");
+        ExtentTestManager.getTest().log(Status.INFO, "Customer Infor -step 16: Verify gender is requied");
         verifyTrue(CustomerInforPage.isGenderDisplayed("male"));
     }
 
-    @Test
-    public void My_Account_03_Addresses(Method method) {
+   @Test
+    public void My_Account_02_Addresses(Method method) {
         ExtentTestManager.startTest(method.getName(), "Addresses to system");
 
         ExtentTestManager.getTest().log(Status.INFO,"Addresses to system TC 02");
@@ -173,7 +158,7 @@ public class TC_03_My_Account extends BaseTest {
 
 
     @Test
-    public void My_Account_04_Change_Password(Method method) {
+    public void My_Account_03_Change_Password(Method method) {
         ExtentTestManager.startTest(method.getName(), "Change Password to system");
 
         ExtentTestManager.getTest().log(Status.INFO, "Change Password to system");
@@ -227,8 +212,8 @@ public class TC_03_My_Account extends BaseTest {
 
 
 
-    @Test
-    public void My_Account_05_My_Product_reviews(Method method) {
+   @Test
+    public void My_Account_04_My_Product_reviews(Method method) {
         ExtentTestManager.startTest(method.getName(), "My Account product review");
         ExtentTestManager.getTest().log(Status.INFO, "My product reviews - Step 01:Open books product");
         ProductBooksPage = homePage.openAddressAddNewPage("Books ");

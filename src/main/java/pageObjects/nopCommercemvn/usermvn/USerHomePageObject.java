@@ -29,4 +29,11 @@ public class USerHomePageObject  extends BasePage {
         clickToElement(driver, HomePageUI.MENU_LINK,menulinkproduct);
         return PageGeneratorManager.getProductBooksPage(driver);
     }
+
+    public MyAccountPageObject clickToMyAccountLink() {
+        waitForElementClickable(driver, HomePageUI.MY_ACCOUNT_LINK);
+        clickToElement(driver, HomePageUI.MY_ACCOUNT_LINK);
+        return PageGeneratorManager.getMyAccountPage(driver);
+    }
+
 }
