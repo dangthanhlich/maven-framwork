@@ -23,6 +23,7 @@ import pageObjects.nopCommerce.user.USerCustomerInforPageObject;
 import pageObjects.nopCommerce.user.USerHomePageObject;
 import pageObjects.nopCommerce.user.USerMyProductReviewPageObject;
 import pageObjects.nopCommerce.user.USerRewardPointPageObject;
+import pageObjects.nopCommercemvn.usermvn.SortDisplayPaingPageObject;
 import pageObjects.wordpress.AdminDashboardPO;
 import pageObjects.wordpress.UserHomePO;
 import pageUIs.jQuery.upLoadFile.BasePageJqueryUI;
@@ -394,6 +395,11 @@ public class BasePage {
         action.moveToElement(getWebElement(driver, locatorType)).perform();
     }
 
+    public void hoverMouseElement(WebDriver driver, String locatorType,String... dynamicValues) {
+        Actions action = new Actions(driver);
+        action.moveToElement(getWebElement(driver, getDynamicXpath(locatorType, dynamicValues))).perform();
+    }
+
     public void pressKeyToElement(WebDriver driver, String locatorType, Keys key) {
         Actions action = new Actions(driver);
         action.sendKeys(getWebElement(driver, locatorType), key).perform();
@@ -732,5 +738,6 @@ public class BasePage {
 
     private long longTimeout = GlobalConstants.LONG_TIMEOUT;
     private long shortTimeout = GlobalConstants.SHORT_TIMEOUT;
+
 
 }

@@ -12,6 +12,8 @@ public class HomePageUI {
     //div[@class='header-menu']//ul//li//a[text()='Books ']
     //public static final String MENU_LINK="xpath=//div[@class='header-menu']//ul//li//a[text()='%s']";
     public static final String MENU_LINK="xpath=//div[@class='header-menu']//ul[@class='top-menu notmobile']//li//a[text()='%s']";
+    public static final String MENU_COMPUTER_LINK="xpath=//div[@class='header-menu']//ul[@class='top-menu notmobile']//li//a[text()='Computers ']";
+    public static final String MENU_NOTEBOOK_LINK="xpath=//div[@class='header-menu']//ul[@class='top-menu notmobile']//li//a[text()='Computers ']//following-sibling::ul//li//a[text()='Notebooks ']";
 
     public static final String SEARCH_FOOTER_LINK="xpath=//div[@class='footer-block customer-service']//ul//li/a[text()='Search']";
 }

@@ -3,6 +3,7 @@ package pageObjects.nopCommercemvn.usermvn;
 import commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import pageUIs.nopCommercemvn.user.HomePageUI;
+import pageUIs.nopCommercemvn.user.SearchPageUI;
 
 public class USerHomePageObject  extends BasePage {
     private WebDriver driver;
@@ -35,5 +36,17 @@ public class USerHomePageObject  extends BasePage {
         clickToElement(driver, HomePageUI.MY_ACCOUNT_LINK);
         return PageGeneratorManager.getMyAccountPage(driver);
     }
+
+    public SortDisplayPaingPageObject dropdownNotebooks(String submenuitem) {
+        waitForElementClickable(driver, HomePageUI.MENU_COMPUTER_LINK);
+        hoverMouseElement(driver, HomePageUI.MENU_COMPUTER_LINK);
+
+        waitForElementClickable(driver, HomePageUI.MENU_NOTEBOOK_LINK);
+        clickToElement(driver, HomePageUI.MENU_NOTEBOOK_LINK,submenuitem);
+        return PageGeneratorManager.getSortDisplayPaingPage(driver);
+    }
+
+
+
 
 }

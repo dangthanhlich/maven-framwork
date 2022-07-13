@@ -3,11 +3,13 @@ package com.nopcommercemvn.user;
 import com.aventstack.extentreports.Status;
 import commons.BaseTest;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObjects.nopCommercemvn.usermvn.PageGeneratorManager;
+import pageObjects.nopCommercemvn.usermvn.SortDisplayPaingPageObject;
 import pageObjects.nopCommercemvn.usermvn.USerHomePageObject;
 import pageObjects.nopCommercemvn.usermvn.USerLoginPageObject;
 import reportConfig.ExtentTestManager;
@@ -38,14 +40,92 @@ public class TC_04_Sort_Display_Paging extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 03:  Enter to Password textbox with value is '" + validPassword + "'");
         loginPage.inputToPasswordTextbox(validPassword);
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 04: Click to button Login");
-        loginPage.clickToLoginButton();
+        homePage = loginPage.clickToLoginButton();
     }
 
     @Test
-    public void Sort_Display_Paging_02_Sort_A_To_Z(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Search to system");
+    public void Sort_Display_Paging_02_Sort_Name_A_To_Z(Method method) {
+        ExtentTestManager.startTest(method.getName(), "Sort to system");
 
-        ExtentTestManager.getTest().log(Status.INFO, "Search - Step 01: Enter to Search textbox with value is ");
+        ExtentTestManager.getTest().log(Status.INFO, "Sort - Step 01: Click to dropdown menu notebooks");
+        sortdisplaypaingPage = homePage.dropdownNotebooks("Notebooks ");
+
+
+        ExtentTestManager.getTest().log(Status.INFO, "Sort - Step 02: Click to dropdown menu notebooks");
+        sortdisplaypaingPage.selectItemInProductSortDropdown("Name: A to Z");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Sort - Step 03:verify Name A to Z is diplay");
+        verifyTrue(sortdisplaypaingPage.isProductNameSortByAscending());
+
+    }
+
+    //@Test
+//    public void Sort_Display_Paging_03_Sort_Name_Z_To_A(Method method) {
+//        ExtentTestManager.startTest(method.getName(), "Sort to system");
+//
+//        ExtentTestManager.getTest().log(Status.INFO, "Sort - Step 01:  refresh page");
+//        sortdisplaypaingPage.refereshCurrentPage(driver);
+//
+//
+//        ExtentTestManager.getTest().log(Status.INFO, "Sort - Step 02: Click to dropdown menu notebooks");
+//        sortdisplaypaingPage.selectItemInProductSortDropdown("Name: Z to A");
+//
+//        ExtentTestManager.getTest().log(Status.INFO, "Sort - Step 03:verify Name Z to A is diplay");
+//        verifyTrue(sortdisplaypaingPage.isProductNameSortByDescending());
+//
+//    }
+
+    @Test
+    public void Sort_Display_Paging_04_Sort_Price_Low_To_High(Method method) {
+        ExtentTestManager.startTest(method.getName(), "Sort to system");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Sort - Step 01:  refresh page");
+        sortdisplaypaingPage.refereshCurrentPage(driver);
+
+
+        ExtentTestManager.getTest().log(Status.INFO, "Sort - Step 02: Click to dropdown menu notebooks");
+        sortdisplaypaingPage.selectItemInProductSortDropdown("Price: Low to High");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Sort - Step 03:verify Price: Low to High is diplay");
+        verifyTrue(sortdisplaypaingPage.isProductPriceSortByAscendig());
+
+    }
+
+
+    public void Sort_Display_Paging_05_Sort_Price_High_To_Low(Method method) {
+        ExtentTestManager.startTest(method.getName(), "Sort to system");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Sort - Step 01:  refresh page");
+        sortdisplaypaingPage.refereshCurrentPage(driver);
+
+
+        ExtentTestManager.getTest().log(Status.INFO, "Sort - Step 02: Click to dropdown menu notebooks");
+        sortdisplaypaingPage.selectItemInProductSortDropdown("Price: High to Low");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Sort - Step 03:verify Price: High to Low is diplay");
+        verifyTrue(sortdisplaypaingPage.isProductPriceSortByDescending());
+
+    }
+
+    public void Sort_Display_Paging_06_Display_3_product(Method method) {
+        ExtentTestManager.startTest(method.getName(), "Display to system");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Display - Step 01: Enter to Search textbox with value is ");
+
+    }
+
+    public void Sort_Display_Paging_07_Display_6_product(Method method) {
+        ExtentTestManager.startTest(method.getName(), "Display to system");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Display - Step 01: Enter to Search textbox with value is ");
+
+    }
+
+
+    public void Sort_Display_Paging_07_Display_9_product(Method method) {
+        ExtentTestManager.startTest(method.getName(), "Display to system");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Display - Step 01: Enter to Search textbox with value is ");
 
     }
 
@@ -62,5 +142,6 @@ public class TC_04_Sort_Display_Paging extends BaseTest {
     private WebDriver driver;
     USerHomePageObject homePage;
     USerLoginPageObject loginPage;
+    SortDisplayPaingPageObject sortdisplaypaingPage;
     String firstName, lastName, emailAddress, validPassword,inemailAddress,invalidPassword,inValidEmailAddress;
 }

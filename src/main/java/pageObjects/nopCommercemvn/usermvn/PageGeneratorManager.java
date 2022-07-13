@@ -40,5 +40,8 @@ public class PageGeneratorManager {
     public static SearchPageObject getSearchPage(WebDriver driver) {
         return new SearchPageObject(driver);
     }
+    public static SortDisplayPaingPageObject getSortDisplayPaingPage(WebDriver driver) {
+        return new SortDisplayPaingPageObject(driver);
+    }
 
 }
