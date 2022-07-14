@@ -4,6 +4,8 @@ import commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import pageUIs.nopCommercemvn.user.*;
 
+import static pageUIs.nopCommercemvn.user.ProductBooksPageUI.ADD_TO_COMPARE_LIST;
+
 public class ProductBooksPageObject extends BasePage {
     private WebDriver driver;
 
@@ -45,5 +47,37 @@ public class ProductBooksPageObject extends BasePage {
         waitForElementClickable(driver, HomePageUI.MY_ACCOUNT_LINK);
         clickToElement(driver, HomePageUI.MY_ACCOUNT_LINK);
         return PageGeneratorManager.getMyAccountPage(driver);
+    }
+
+    public void clickToAddToWishList() {
+        waitForElementClickable(driver, ProductBooksPageUI.ADD_TO_WISH_LIST);
+        clickToElement(driver, ProductBooksPageUI.ADD_TO_WISH_LIST);
+    }
+
+    public boolean isProductwishlist(String message) {
+        waitForElementVisible(driver, ProductBooksPageUI.WISH_LIST_MESSAGGE,message);
+        return isElementDisplayed(driver, ProductBooksPageUI.WISH_LIST_MESSAGGE,message);
+    }
+
+    public WishListPageObject clickToToWishList() {
+        waitForElementClickable(driver, ProductBooksPageUI.WISH_LIST);
+        clickToElement(driver, ProductBooksPageUI.WISH_LIST);
+        return  PageGeneratorManager.getWishListPage(driver);
+    }
+
+    public void clickToCompare(String nameproduct) {
+        waitForElementClickable(driver, ProductBooksPageUI.ADD_TO_COMPARE_LIST,nameproduct);
+        clickToElement(driver, ProductBooksPageUI.ADD_TO_COMPARE_LIST,nameproduct);
+    }
+
+    public boolean isProductComParision(String message) {
+        waitForElementVisible(driver, ProductBooksPageUI.ADD_TO_COMPARE_LIST_MESSAGE, message);
+        return isElementDisplayed(driver, ProductBooksPageUI.ADD_TO_COMPARE_LIST_MESSAGE, message);
+    }
+
+    public ComparePageObject clickToToProductComparision(String message) {
+        waitForElementClickable(driver, ProductBooksPageUI.ADD_TO_COMPARE_LIST_MESSAGE, message);
+        clickToElement(driver, ProductBooksPageUI.ADD_TO_COMPARE_LIST_MESSAGE, message);
+        return PageGeneratorManager.getComparePage(driver);
     }
 }

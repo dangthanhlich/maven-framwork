@@ -59,7 +59,7 @@ public class TC_04_Sort_Display_Paging extends BaseTest {
 
     }
 
-    //@Test
+//    @Test
 //    public void Sort_Display_Paging_03_Sort_Name_Z_To_A(Method method) {
 //        ExtentTestManager.startTest(method.getName(), "Sort to system");
 //
@@ -85,6 +85,7 @@ public class TC_04_Sort_Display_Paging extends BaseTest {
 
         ExtentTestManager.getTest().log(Status.INFO, "Sort - Step 02: Click to dropdown menu notebooks");
         sortdisplaypaingPage.selectItemInProductSortDropdown("Price: Low to High");
+        sortdisplaypaingPage.sleepInSecond(2);
 
         ExtentTestManager.getTest().log(Status.INFO, "Sort - Step 03:verify Price: Low to High is diplay");
         verifyTrue(sortdisplaypaingPage.isProductPriceSortByAscendig());
@@ -92,6 +93,7 @@ public class TC_04_Sort_Display_Paging extends BaseTest {
     }
 
 
+    @Test
     public void Sort_Display_Paging_05_Sort_Price_High_To_Low(Method method) {
         ExtentTestManager.startTest(method.getName(), "Sort to system");
 
@@ -101,33 +103,47 @@ public class TC_04_Sort_Display_Paging extends BaseTest {
 
         ExtentTestManager.getTest().log(Status.INFO, "Sort - Step 02: Click to dropdown menu notebooks");
         sortdisplaypaingPage.selectItemInProductSortDropdown("Price: High to Low");
+        sortdisplaypaingPage.sleepInSecond(2);
 
         ExtentTestManager.getTest().log(Status.INFO, "Sort - Step 03:verify Price: High to Low is diplay");
         verifyTrue(sortdisplaypaingPage.isProductPriceSortByDescending());
 
     }
 
+    @Test
     public void Sort_Display_Paging_06_Display_3_product(Method method) {
         ExtentTestManager.startTest(method.getName(), "Display to system");
 
-        ExtentTestManager.getTest().log(Status.INFO, "Display - Step 01: Enter to Search textbox with value is ");
+        ExtentTestManager.getTest().log(Status.INFO, "Sort - Step 01:  refresh page");
+        sortdisplaypaingPage.refereshCurrentPage(driver);
+
+
+        ExtentTestManager.getTest().log(Status.INFO, "Sort - Step 02: Click to dropdown products");
+        sortdisplaypaingPage.selectNumberInProductSortDropdown("3");
+        sortdisplaypaingPage.sleepInSecond(2);
+
+//        ExtentTestManager.getTest().log(Status.INFO, "Sort - Step 03:verify Price: High to Low is diplay");
+//        verifyTrue(sortdisplaypaingPage.isCountProductNumberSortByDescending());
+
 
     }
 
-    public void Sort_Display_Paging_07_Display_6_product(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Display to system");
-
-        ExtentTestManager.getTest().log(Status.INFO, "Display - Step 01: Enter to Search textbox with value is ");
-
-    }
-
-
-    public void Sort_Display_Paging_07_Display_9_product(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Display to system");
-
-        ExtentTestManager.getTest().log(Status.INFO, "Display - Step 01: Enter to Search textbox with value is ");
-
-    }
+//    @Test
+//    public void Sort_Display_Paging_07_Display_6_product(Method method) {
+//        ExtentTestManager.startTest(method.getName(), "Display to system");
+//
+//        ExtentTestManager.getTest().log(Status.INFO, "Display - Step 01: Enter to Search textbox with value is ");
+//
+//    }
+//
+//
+//    @Test
+//    public void Sort_Display_Paging_08_Display_9_product(Method method) {
+//        ExtentTestManager.startTest(method.getName(), "Display to system");
+//
+//        ExtentTestManager.getTest().log(Status.INFO, "Display - Step 01: Enter to Search textbox with value is ");
+//
+//    }
 
     @AfterClass
     public void afterClass() {
@@ -144,4 +160,5 @@ public class TC_04_Sort_Display_Paging extends BaseTest {
     USerLoginPageObject loginPage;
     SortDisplayPaingPageObject sortdisplaypaingPage;
     String firstName, lastName, emailAddress, validPassword,inemailAddress,invalidPassword,inValidEmailAddress;
+
 }

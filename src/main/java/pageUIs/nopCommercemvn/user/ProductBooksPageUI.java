@@ -15,6 +15,19 @@ public class ProductBooksPageUI {
 
     public static final String SUBMIT_REVIEW_BUTTON="xpath=//div[@class='buttons']//button[text()='Submit review']";
 
+    public static final String ADD_TO_WISH_LIST ="xpath=//div[@class='add-to-wishlist']//button";
+
+   public static final String WISH_LIST ="xpath=//div[@class='bar-notification success']//p//a";
+
+    //div[@class='bar-notification success']//p[contains(text(),'The product has been added to your')]//a[text()='wishlist']
+   public static final String WISH_LIST_MESSAGGE ="xpath=//div[@class='bar-notification success']//p[contains(text(),'%s')]//a[text()='wishlist']";
+
+
+    public static final String ADD_TO_COMPARE_LIST="xpath=//a[text()='%s']//parent::h2//following-sibling::div[@class='add-info']//div[@class='buttons']//button[@title='Add to compare list']";
+
+    //div[@class='bar-notification success']//p[text()='The product has been added to your ']//a[text()='product comparison']
+    public static final String ADD_TO_COMPARE_LIST_MESSAGE="xpath=//div[@class='bar-notification success']//p[text()='%s']//a[text()='product comparison']";
+
 
 
 }

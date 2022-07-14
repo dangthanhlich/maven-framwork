@@ -117,7 +117,7 @@ public class ProductPageObject extends BasePage {
 		}
 
 		// sort cái ProductsortList
-		Collections.sort(productUIList);
+		Collections.sort(productSortList);
 		for (Float productName : productSortList) {
 			System.out.print("Product name after sort" + productName);
 		}
@@ -156,13 +156,15 @@ public class ProductPageObject extends BasePage {
 		}
 
 		// sort cái ProductsortList
-		Collections.sort(productUIList);
+		Collections.sort(productSortList);
 		for (Float productName : productSortList) {
 			System.out.print("Product name after sort" + productName);
 		}
 
 		Collections.reverse(productSortList);
-
+		for (Float productName : productSortList) {
+			System.out.print("Product name after sort" + productName);
+		}
 		// so sánh 2 List đã bằng nhau
 		return productSortList.equals(productUIList);
 	}

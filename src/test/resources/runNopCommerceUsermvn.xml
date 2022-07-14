@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="NopCommerce - User" parallel="method" thread-count="3">
 
-	<listeners>
-		<listener class-name="commons.MethodListener"/>
+    <listeners>
+        <listener class-name="commons.MethodListener"/>
         <listener class-name="reportConfig.ExtentTestListener"/>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
-	</listeners>
-	
-  <parameter name="environment" value ="DEV" />
-   <test name="Run on CHROME">
-	<parameter name="browser" value="chrome" />
-    <classes>
-        <class name="com.nopcommercemvn.user.Common_01_Register"/>
-        <class name="com.nopcommercemvn.user.TC_04_Sort_Display_Paging"/>
-    </classes>
-  </test>
+    </listeners>
+
+    <parameter name="environment" value="DEV"/>
+    <test name="Run on CHROME">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.nopcommercemvn.user.Common_01_Register"/>
+            <!--        <class name="com.nopcommercemvn.user.TC_04_Sort_Display_Paging"/>-->
+            <class name="com.nopcommercemvn.user.TC_05_WishList"/>
+        </classes>
+    </test>
 </suite> <!-- Suite -->
