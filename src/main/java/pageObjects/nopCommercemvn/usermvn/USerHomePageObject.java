@@ -47,6 +47,16 @@ public class USerHomePageObject  extends BasePage {
     }
 
 
+    public SortDisplayPaingPageObject dropdowndesktops(String submenuitem) {
+        waitForElementClickable(driver, HomePageUI.MENU_COMPUTER_LINK);
+        hoverMouseElement(driver, HomePageUI.MENU_COMPUTER_LINK);
+
+        waitForElementClickable(driver, HomePageUI.MENU_DESKTOPS_LINK);
+        clickToElement(driver, HomePageUI.MENU_DESKTOPS_LINK,submenuitem);
+        return PageGeneratorManager.getSortDisplayPaingPage(driver);
+    }
+
+
 
 
 }

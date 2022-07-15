@@ -31,8 +31,6 @@ public class USerLoginPageObject extends BasePage {
     }
 
     public void inputToPasswordTextbox(String password) {
-//        waitForElementClickable(driver, LoginPageUI.PASSWORD_TEXTBOX);
-//        clickToElement(driver, LoginPageUI.PASSWORD_TEXTBOX);
         waitForElementVisible(driver, LoginPageUI.PASSWORD_TEXTBOX);
         sendkeyToElement(driver,LoginPageUI.PASSWORD_TEXTBOX,password);
     }

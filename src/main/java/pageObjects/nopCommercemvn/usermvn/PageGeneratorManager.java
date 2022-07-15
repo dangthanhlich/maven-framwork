@@ -65,5 +65,8 @@ public class PageGeneratorManager {
     public static RecentlyViewedProductsPageObject getRecentlyViewedProductsPage(WebDriver driver) {
         return new RecentlyViewedProductsPageObject(driver);
     }
+    public static OrderPageObject getOrderPage(WebDriver driver) {
+        return new OrderPageObject(driver);
+    }
 
 }

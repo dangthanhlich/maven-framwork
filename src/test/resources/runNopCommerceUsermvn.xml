@@ -14,7 +14,7 @@
         <classes>
             <class name="com.nopcommercemvn.user.Common_01_Register"/>
             <!--        <class name="com.nopcommercemvn.user.TC_04_Sort_Display_Paging"/>-->
-            <class name="com.nopcommercemvn.user.TC_05_WishList"/>
+            <class name="com.nopcommercemvn.user.TC_06_Order"/>
         </classes>
     </test>
 </suite> <!-- Suite -->
