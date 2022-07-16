@@ -25,4 +25,9 @@ public class MyAccountPageObject extends BasePage {
     }
 
 
+    public OrderPageObject clickTMyProductLink(String orders) {
+        waitForElementClickable(driver, MyAccountPageUI.ITEM_MENU_LIST,orders);
+        clickToElement(driver, MyAccountPageUI.ITEM_MENU_LIST,orders);
+        return PageGeneratorManager.getOrderPage(driver);
+    }
 }

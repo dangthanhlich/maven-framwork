@@ -30,6 +30,9 @@ public class Common_01_Register extends BaseTest {
         inValidEmailAddress = "#123";
         validPassword = "123456";
         invalidPassword = "456789";
+        city="Ha noi";
+        address1="le van luong 1";
+        phoneNumber="0345678999";
 
 
         registerPage = homePage.openRegisterPage();
@@ -67,6 +70,6 @@ public class Common_01_Register extends BaseTest {
     USerHomePageObject homePage;
     USerRegisterPageObject registerPage;
     USerLoginPageObject loginPage;
-    String firstName, lastName, inemailAddress, invalidPassword, inValidEmailAddress;
-    public static String emailAddress, validPassword;
+    String  inemailAddress, invalidPassword, inValidEmailAddress;
+    public static String emailAddress, validPassword ,firstName, lastName, city, address1, phoneNumber;
 }
