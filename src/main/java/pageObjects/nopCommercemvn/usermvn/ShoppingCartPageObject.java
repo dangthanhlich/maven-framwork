@@ -269,4 +269,39 @@ public class ShoppingCartPageObject extends BasePage {
         clickToElement(driver, HomePageUI.MY_ACCOUNT_LINK);
         return PageGeneratorManager.getMyAccountPage(driver);
     }
+
+    public void dropdownCard(String visa) {
+        waitForElementClickable(driver, OrderPageUI.SELECT_CREDIT_CART);
+        selectItemDefaultDropdown(driver, OrderPageUI.SELECT_CREDIT_CART ,visa);
+    }
+
+    public void inputToCardhoderNameTextbox(String cardhodername) {
+        waitForElementVisible(driver, OrderPageUI.CARDHOLDER_NAME_TEXTBOX);
+        sendkeyToElement(driver,OrderPageUI.CARDHOLDER_NAME_TEXTBOX,cardhodername);
+    }
+
+    public void inputToCardhoderNumberTextbox(String cardhodernumber) {
+        waitForElementVisible(driver, OrderPageUI.CART_NUMBER);
+        sendkeyToElement(driver,OrderPageUI.CART_NUMBER,cardhodernumber);
+    }
+
+    public void dropdownExpirationMonth(String date) {
+        waitForElementClickable(driver, OrderPageUI.EXPIRATION_DATE_MONTH);
+        selectItemDefaultDropdown(driver, OrderPageUI.EXPIRATION_DATE_MONTH ,date);
+    }
+
+    public void dropdownExpirationYear(String year) {
+        waitForElementClickable(driver, OrderPageUI.EXPIRATION_DATE_YEAR);
+        selectItemDefaultDropdown(driver, OrderPageUI.EXPIRATION_DATE_YEAR ,year);
+    }
+
+    public void inputToCardCodeTextbox(String cardCode) {
+        waitForElementVisible(driver, OrderPageUI.CART_CODE);
+        sendkeyToElement(driver,OrderPageUI.CART_CODE,cardCode);
+    }
+
+    public void clickToContinueCardButton() {
+        waitForElementClickable(driver, OrderPageUI.CONTINUE);
+        clickToElement(driver, OrderPageUI.CONTINUE);
+    }
 }

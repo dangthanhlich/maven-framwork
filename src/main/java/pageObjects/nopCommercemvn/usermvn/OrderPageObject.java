@@ -2,6 +2,8 @@ package pageObjects.nopCommercemvn.usermvn;
 
 import commons.BasePage;
 import org.openqa.selenium.WebDriver;
+import pageUIs.nopCommercemvn.user.DetailProductsPageUI;
+import pageUIs.nopCommercemvn.user.HomePageUI;
 import pageUIs.nopCommercemvn.user.OrderPageUI;
 
 public class OrderPageObject extends BasePage {
@@ -85,5 +87,11 @@ public class OrderPageObject extends BasePage {
     public boolean isTotalShoppingCartDisplay(String shipping, String total) {
         waitForElementVisible(driver, OrderPageUI.SUB_TOTAL_ORDERL,shipping,total);
         return isElementDisplayed(driver, OrderPageUI.SUB_TOTAL_ORDERL,shipping,total);
+    }
+
+    public ShoppingCartPageObject clickShoppingCart() {
+        waitForElementClickable(driver, HomePageUI.SHOPPING_CART_LINK);
+        clickToElement(driver, HomePageUI.SHOPPING_CART_LINK);
+        return PageGeneratorManager.getShoppingCartPage(driver);
     }
 }

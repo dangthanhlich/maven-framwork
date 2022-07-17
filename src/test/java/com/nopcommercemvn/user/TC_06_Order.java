@@ -30,6 +30,9 @@ public class TC_06_Order extends BaseTest {
         ZipPostalCode="550000";
         nameProduct ="Lenovo IdeaCentre 600 All-in-One PC";
         priceProduct ="$500.00";
+        cardhodername="02934546567";
+        cardhodernumber="02934546599";
+        cardCode="55000";
 
     }
 
@@ -177,7 +180,6 @@ public class TC_06_Order extends BaseTest {
     @Test
     public void Order_05_Update_Shopping_Cart(Method method) {
         ExtentTestManager.startTest(method.getName(), "Update shopping cart to system");
-        //ExtentTestManager.getTest().log(Status.INFO, "Update shopping cart - Step 01: open page");
         ExtentTestManager.getTest().log(Status.INFO, "Update shopping cart  - Step 01: Click to dropdown menu notebooks");
         sortdisplaypaingPage = shoppingCartPage.dropdowndesktops("Desktops ");
 
@@ -385,17 +387,128 @@ public class TC_06_Order extends BaseTest {
 
     }
 
-    @Test
+
     public void Order_07_Checkout_Payment(Method method) {
         ExtentTestManager.startTest(method.getName(), "Checkout Payment to system");
-        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 01: open page");
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment  - Step 01: Click Shopping Cart");
+        shoppingCartPage = orderPage.clickShoppingCart();
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment  - Step 04: Click to dropdown menu notebooks");
+        sortdisplaypaingPage = shoppingCartPage.dropdowndesktops("Desktops ");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 05: Click to products name ");
+        detailProductsPage = sortdisplaypaingPage.clickToProductName(nameProduct);
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment  - Step 06: Click to button Add to Cart ");
+        detailProductsPage.clickToAddToCart("Add to cart");
+        detailProductsPage.sleepInSecond(2);
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 07: Verify  the product has been added to your shopping cart  message is displayed");
+        verifyTrue(detailProductsPage.isAddToCartSuceessMessage("The product has been added to your "));
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment  - Step 08: Click Shopping Cart");
+        shoppingCartPage = detailProductsPage.clickShoppingCart("The product has been added to your ");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment  - Step 09: Enter qty textbox ");
+        shoppingCartPage.enterToQtyTextbox("2");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment  - Step 10: Click to button Update shopping cart ");
+        shoppingCartPage.clickToUpdateShoppingCart();
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 11: Verify  'Total' is display");
+        verifyTrue(shoppingCartPage.isTotalDisplay("$1,000.00"));
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 12: click to ' Estimate shipping ' page");
+        shoppingCartPage.clickToEstimateShippinCartButton();
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 13: Select country dropdown");
+        shoppingCartPage.selectCountryDropdown("Viet Nam");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 14: Enter to ZipPostalCode");
+        shoppingCartPage.inputZipPostalCodeTextbox(ZipPostalCode);
+        shoppingCartPage.sleepInSecond(4);
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment- Step 15: Click to Apply");
+        shoppingCartPage.clickToApply();
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 16:  Verify Gift wrapping: No message is displayed");
+        verifyTrue(shoppingCartPage.isGiftWrappingMessage("Gift wrapping: No"));
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 17: Checkbox input Agree ");
+        shoppingCartPage.checkboxToCheckAgree();
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 18: Click to check out ");
+        shoppingCartPage.clickToCheckOut();
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 19:  Enter to Firstname textbox with value is '" + firstName + "'");
+        shoppingCartPage.inputToFirstnameTextbox(firstName);
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 20:  Enter to LastName textbox with value is '" + firstName + "'");
+        shoppingCartPage.inputToLastnameTextbox(lastName);
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 21:  Enter to Email textbox with value is '" + emailAddress + "'");
+        shoppingCartPage.inputToEmailTextbox(emailAddress);
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 22: Select country dropdown");
+        shoppingCartPage.selectCountryDropdownCheckOut("Viet Nam");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 23:  Enter to City textbox with value is '" + city + "'");
+        shoppingCartPage.inputToCityTextbox(city);
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 24:  Enter to City textbox with value is '" + address1 + "'");
+        shoppingCartPage.inputToAddress1Textbox(address1);
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 25: Enter to ZipPostalCode Textbox is '" + ZipPostalCode + "'");
+        shoppingCartPage.inputZipPostalCodeCheckOut(ZipPostalCode);
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment- Step 26: Enter to PhoneNumber Textbox is'" + phoneNumber + "'");
+        shoppingCartPage.inputPhoneNUmberCheckOut(phoneNumber);
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 27: Click to button continue");
+        shoppingCartPage.clickToContinueButton();
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 28: Click to radio Ground ($0.00) checkout  ");
+        shoppingCartPage.clickToRadioGroup("Ground ($0.00)");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 29: Click to button continue checkout");
+        shoppingCartPage.clickToContinueCheckoutButton();
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment- Step 30: Click to radio Check / Money Order or Credit Card");
+        shoppingCartPage.clickToRadioPayCart("Check / Money Order");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Checkout Payment - Step 31: Click to button continue checkout");
+        shoppingCartPage.clickToContinuePayCartButton();
+
+//        ExtentTestManager.getTest().log(Status.INFO, "Checkout order - Step 18: select 'Select credit card' dropdown");
+//        shoppingCartPage.dropdownCard("Visa");
+//
+//        ExtentTestManager.getTest().log(Status.INFO, "Search - Step 01: Enter toCardholder name textbox with value is '" + cardhodername + "'");
+//        shoppingCartPage.inputToCardhoderNameTextbox(cardhodername);
+//
+//        ExtentTestManager.getTest().log(Status.INFO, "Search - Step 01: Enter toCardholder name textbox with value is '" + cardhodernumber + "'");
+//        shoppingCartPage.inputToCardhoderNumberTextbox(cardhodernumber);
+//
+//        ExtentTestManager.getTest().log(Status.INFO, "Checkout order - Step 18: select 'Expiration date: month' dropdown");
+//        shoppingCartPage.dropdownExpirationMonth("01");
+//
+//        ExtentTestManager.getTest().log(Status.INFO, "Checkout order - Step 18: select 'Expiration date:year' dropdown");
+//        shoppingCartPage.dropdownExpirationYear("2022");
+//
+//        ExtentTestManager.getTest().log(Status.INFO, "Search - Step 01: Enter Card code:  textbox with value is '" + cardCode + "'");
+//        shoppingCartPage.inputToCardCodeTextbox(cardCode);
+//
+//        ExtentTestManager.getTest().log(Status.INFO, "Checkout order - Step 18: Click to continue button ");
+//        shoppingCartPage.clickToContinueCardButton();
+
+
     }
 
-    @Test
-    public void Order_08_Re_Order(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Re order to system");
-        ExtentTestManager.getTest().log(Status.INFO, "Re order - Step 01: open page");
-    }
+//    @Test
+//    public void Order_08_Re_Order(Method method) {
+//        ExtentTestManager.startTest(method.getName(), "Re order to system");
+//        ExtentTestManager.getTest().log(Status.INFO, "Re order - Step 01: open page");
+//        orderPage = myAccountPage.clickTMyProductLink("Orders");
+//    }
 
 
     @AfterClass
@@ -428,7 +541,8 @@ public class TC_06_Order extends BaseTest {
 
     RecentlyViewedProductsPageObject recentlyViewedProductsPage;
 
-    String  emailAddress, validPassword, numbercart,ZipPostalCode, nameProduct,priceProduct,firstName,lastName,city, address1, phoneNumber;
+    String  emailAddress, validPassword, numbercart,ZipPostalCode, nameProduct,priceProduct,
+            firstName,lastName,city, address1, phoneNumber,cardhodername,cardhodernumber,cardCode;
 
 
 

@@ -127,6 +127,23 @@ public class OrderPageUI {
 
 
 
+    public static final String SELECT_CREDIT_CART ="xpath=//tbody//tr//td//select[@id='CreditCardType']";
+
+
+    public static final String CARDHOLDER_NAME_TEXTBOX ="xpath=//input[@id='CardholderName']";
+
+
+    public static final String CART_NUMBER ="xpath=//input[@id='CardNumber']";
+
+    public static final String EXPIRATION_DATE_MONTH ="xpath=//select[@id='ExpireMonth']";
+
+    public static final String EXPIRATION_DATE_YEAR ="xpath=//select[@id='ExpireYear']";
+
+    public static final String CART_CODE ="xpath=//td//input[@id='CardCode']";
+
+    public static final String CONTINUE ="xpath=//div[@id='payment-info-buttons-container']//button";
+
+
 
 
 
