@@ -40,7 +40,6 @@ public class BaseTest {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
 
 		if (browserList == BrowserList.FIREFOX) {
-			WebDriverManager.firefoxdriver().setup();
 
 			// mất warning lúc chạy
 			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");

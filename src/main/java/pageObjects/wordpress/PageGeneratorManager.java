@@ -1,6 +1,7 @@
 package pageObjects.wordpress;
 
 import org.openqa.selenium.WebDriver;
+import pageObjects.nopCommercemvn.adminmvn.AdminPageObject;
 
 public class PageGeneratorManager {
 
@@ -39,5 +40,6 @@ public class PageGeneratorManager {
 	public static UserSearchPostPO getUserSearchPostPage(WebDriver driver) {
 		return new UserSearchPostPO(driver);
 	}
+
 
 }
